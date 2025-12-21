@@ -236,14 +236,14 @@ const DefiniteIntegralCalculator = () => {
 
               <div className="result-item highlight">
                 <label>Nilai Rata-rata:</label>
-                <div className="result-value">{result.average_value}</div>
+                <BlockFormula formula={`f_{avg} = ${result.average_value}`} />
               </div>
 
               <div className="result-info">
                 <p className="formula-text">
-                  <strong>Rumus:</strong> f_avg = (1/(b-a)) × ∫[a,b]f(x)dx
+                  <strong>Rumus:</strong>
                 </p>
-                <p>{result.formula}</p>
+                <BlockFormula formula={`f_{avg} = \\frac{1}{b-a} \\int_a^b f(x) dx`} />
               </div>
             </>
           )}

@@ -18,27 +18,30 @@
 
 /* ============ HERO SECTION ============ */
 .integral-hero {
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-  border-radius: 12px;
-  padding: 60px 40px;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
   text-align: center;
-  margin: 40px 0;
-  color: white;
+  margin: 60px 0 40px 0;
+  color: #000000;
 }
 
 .integral-hero h1 {
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 800;
   margin-bottom: 16px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: none;
+  color: #000000;
+  letter-spacing: -2px;
 }
 
 .integral-hero p {
-  font-size: 18px;
+  font-size: 1.1rem;
   font-weight: 400;
-  opacity: 0.95;
-  max-width: 600px;
+  opacity: 1;
+  max-width: 700px;
   margin: 0 auto;
+  color: #666666;
 }
 
 /* ============ NAVIGATION TABS ============ */
@@ -46,51 +49,52 @@
   display: flex;
   gap: 8px;
   margin: 40px 0;
-  border-bottom: 2px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
   flex-wrap: wrap;
 }
 
 .nav-item {
   background: none;
   border: none;
-  padding: 16px 24px;
-  font-size: 15px;
+  padding: 12px 20px;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: #666;
+  color: #666666;
   cursor: pointer;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   display: flex;
   gap: 8px;
   align-items: center;
 }
 
 .nav-item:hover {
-  color: #2563eb;
+  color: #000000;
 }
 
 .nav-item.active {
-  color: #2563eb;
+  color: #000000;
 }
 
 .nav-item.active::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -1px;
   left: 0;
   right: 0;
   height: 3px;
-  background: #2563eb;
-  border-radius: 2px;
+  background: #000000;
+  border-radius: 0;
 }
 
 .nav-label {
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 
 .nav-icon {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
+  display: none;
 }
 
 /* ============ CONTENT SECTION ============ */
@@ -207,9 +211,9 @@
 }
 
 .formula-item h4 {
-  font-size: 14px;
-  font-weight: 600;
-  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000000;
   margin: 0;
 }
 
@@ -217,7 +221,7 @@
   background: white;
   border-radius: 6px;
   padding: 12px;
-  border-left: 3px solid #2563eb;
+  border-left: 3px solid #000000;
   min-height: 50px;
   display: flex;
   align-items: center;

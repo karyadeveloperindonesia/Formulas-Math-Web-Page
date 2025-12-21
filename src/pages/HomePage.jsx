@@ -64,9 +64,10 @@ export const HomePage = () => {
       </section>
 
       {/* Categories Section */}
-      <section className="categories-section">
-        <div className="container">
-          <h2>Rumus Matematika</h2>
+      {!selectedCategory && (
+        <section className="categories-section">
+          <div className="container">
+            <h2>Rumus Matematika</h2>
           <p className="section-subtitle">
             Akses cepat ke rumus dan kalkulator matematika penting.
           </p>
@@ -79,8 +80,7 @@ export const HomePage = () => {
                 title={category.title}
                 description={category.description}
                 onClick={() => {
-                  const categorySlug = slugify(category.title)
-                  navigate(`/${categorySlug}`)
+                  setSelectedCategory(category.title)
                 }}
               />
             ))}
@@ -108,6 +108,7 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
+      )}
 
       {/* Search Results / Formulas Section */}
       <section className="formulas-section">

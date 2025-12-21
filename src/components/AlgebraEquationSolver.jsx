@@ -81,10 +81,10 @@ const AlgebraEquationSolver = () => {
   }
 
   return (
-    <div className="calculator-section">
-      <h2>Penyesal Persamaan Algebra</h2>
+    <div className="calculator-section algebra-solver">
+      <h2 className="section-title">Selesaikan Persamaan Algebra</h2>
       <p className="section-description">
-        Selesaikan persamaan linear atau kuadrat dengan langkah-langkah detail.
+        Alat penyelesaian interaktif untuk menyelesaikan persamaan linear dan kuadrat dengan langkah-langkah detail.
       </p>
 
       {/* Type Selector */}
@@ -257,7 +257,7 @@ const AlgebraEquationSolver = () => {
                     {result.steps.map((step, idx) => (
                       <div key={idx} className="step">
                         <p className="step-number">Langkah {step.step}: {step.description}</p>
-                        <p className="step-expression">{step.expression}</p>
+                        <BlockFormula formula={step.expression} />
                       </div>
                     ))}
                   </div>
@@ -314,7 +314,7 @@ const AlgebraEquationSolver = () => {
                     {result.steps.map((step, idx) => (
                       <div key={idx} className="step">
                         <p className="step-number">Langkah {step.step}: {step.description}</p>
-                        <p className="step-expression">{step.expression}</p>
+                        <BlockFormula formula={step.expression} />
                       </div>
                     ))}
                   </div>

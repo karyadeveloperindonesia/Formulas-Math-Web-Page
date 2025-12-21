@@ -38,7 +38,7 @@ const AlgebraDetailPage = () => {
         {/* Hero Section */}
         <section className="algebra-hero">
           <div className="hero-content">
-            <h1>🧮 Kalkulator Aljabar</h1>
+            <h1>Kalkulator Aljabar</h1>
             <p>Alat pembelajaran interaktif untuk menyelesaikan persamaan dan operasi matriks dengan langkah-langkah terperinci</p>
           </div>
         </section>
@@ -81,7 +81,7 @@ const AlgebraDetailPage = () => {
               {/* Formula Reference Card */}
               {showFormulas && (
                 <section className="algebra-formula-reference">
-                  <h2>📚 Referensi Rumus Persamaan</h2>
+                  <h2>Referensi Rumus Persamaan</h2>
                   <div className="algebra-formulas-grid">
                     <div className="algebra-formula-card">
                       <div className="formula-badge">Linear</div>
@@ -114,7 +114,7 @@ const AlgebraDetailPage = () => {
               {/* Calculator Component */}
               <div className="algebra-calculator-wrapper">
                 <div className="calculator-instructions">
-                  <h3>💡 Cara Menggunakan</h3>
+                  <h3>Cara Menggunakan</h3>
                   <ul>
                     <li>Masukkan koefisien persamaan (a, b, c)</li>
                     <li>Sistem akan menyelesaikan persamaan secara otomatis</li>
@@ -132,7 +132,7 @@ const AlgebraDetailPage = () => {
               {/* Formula Reference Card */}
               {showFormulas && (
                 <section className="algebra-formula-reference">
-                  <h2>📚 Referensi Rumus Matriks</h2>
+                  <h2>Referensi Rumus Matriks</h2>
                   <div className="algebra-formulas-grid">
                     <div className="algebra-formula-card">
                       <div className="formula-badge">Det</div>
@@ -165,7 +165,7 @@ const AlgebraDetailPage = () => {
               {/* Calculator Component */}
               <div className="algebra-calculator-wrapper">
                 <div className="calculator-instructions">
-                  <h3>💡 Cara Menggunakan</h3>
+                  <h3>Cara Menggunakan</h3>
                   <ul>
                     <li>Pilih jenis operasi matriks yang diinginkan</li>
                     <li>Masukkan nilai-nilai matriks dalam format yang ditunjukkan</li>
@@ -181,14 +181,13 @@ const AlgebraDetailPage = () => {
         {/* Additional Formulas Section */}
         <section className="algebra-additional-formulas">
           <div className="section-header">
-            <h2>📖 Referensi Rumus Tambahan</h2>
+            <h2>Referensi Rumus Tambahan</h2>
             <p className="section-subtitle">Kumpulan lengkap rumus-rumus aljabar yang sering digunakan</p>
           </div>
 
           <div className="algebra-sections-grid">
             {/* Identitas Aljabar */}
             <div className="algebra-formula-section">
-              <div className="section-icon">🎯</div>
               <h3>Identitas Aljabar</h3>
               <div className="formulas-list">
                 <div className="formula-row">
@@ -216,7 +215,6 @@ const AlgebraDetailPage = () => {
 
             {/* Eksponen & Logaritma */}
             <div className="algebra-formula-section">
-              <div className="section-icon">⚡</div>
               <h3>Eksponen & Logaritma</h3>
               <div className="formulas-list">
                 <div className="formula-row">
@@ -244,7 +242,6 @@ const AlgebraDetailPage = () => {
 
             {/* Barisan & Deret */}
             <div className="algebra-formula-section">
-              <div className="section-icon">📊</div>
               <h3>Barisan & Deret</h3>
               <div className="formulas-list">
                 <div className="formula-row">

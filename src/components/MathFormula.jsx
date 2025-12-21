@@ -1,6 +1,6 @@
 import { InlineMath, BlockMath } from 'react-katex'
-import 'katex/dist/katex.min.css'
 import './MathFormula.css'
+// KaTeX CSS is loaded from CDN in index.html
 
 export const MathFormula = ({ formula, inline = false, className = '' }) => {
   if (!formula) return null
