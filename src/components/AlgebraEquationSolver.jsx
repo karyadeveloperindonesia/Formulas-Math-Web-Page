@@ -235,12 +235,34 @@ const AlgebraEquationSolver = () => {
             <>
               <div className="result-item">
                 <p><strong>Solusi:</strong></p>
-                <BlockFormula formula={`x = ${result.solution.toFixed(6)}`} />
+                <BlockFormula formula={`x = ${result.solution ? result.solution.toFixed(6) : 'N/A'}`} />
               </div>
               <div className="result-item">
                 <p><strong>Verifikasi:</strong></p>
-                <p className="verification">{result.verification}</p>
+                {result.verification ? (
+                  <p className="verification">
+                    Hasil: {result.verification.equation_result?.toFixed(10)} 
+                    {result.verification.is_correct ? ' ✓ Benar' : ' ✗ Salah'}
+                  </p>
+                ) : (
+                  <p className="verification">-</p>
+                )}
               </div>
+
+              {/* Steps */}
+              {result.steps && result.steps.length > 0 && (
+                <div className="result-item">
+                  <p><strong>Langkah-langkah:</strong></p>
+                  <div className="steps-container">
+                    {result.steps.map((step, idx) => (
+                      <div key={idx} className="step">
+                        <p className="step-number">Langkah {step.step}: {step.description}</p>
+                        <p className="step-expression">{step.expression}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </>
           )}
 
@@ -248,41 +270,67 @@ const AlgebraEquationSolver = () => {
             <>
               <div className="result-item">
                 <p><strong>Diskriminan (D):</strong></p>
-                <BlockFormula formula={`D = b^2 - 4ac = ${result.discriminant.toFixed(6)}`} />
+                <BlockFormula formula={`D = b^2 - 4ac = ${result.discriminant ? result.discriminant.toFixed(6) : 'N/A'}`} />
               </div>
 
               <div className="result-item">
                 <p><strong>Jenis Akar:</strong></p>
-                <p className="root-type">{result.root_type}</p>
+                <p className="root-type">
+                  {result.discriminant_type === 'positive' && '✓ Dua akar real yang berbeda'}
+                  {result.discriminant_type === 'zero' && '✓ Satu akar real (berulang)'}
+                  {result.discriminant_type === 'negative' && '✓ Dua akar kompleks (tidak ada akar real)'}
+                </p>
               </div>
 
               <div className="result-item">
                 <p><strong>Solusi:</strong></p>
-                {result.roots_complex ? (
+                {result.roots && Array.isArray(result.roots) && (
                   <>
-                    <p>Akar 1: {result.roots_complex[0]}</p>
-                    <p>Akar 2: {result.roots_complex[1]}</p>
-                  </>
-                ) : (
-                  <>
-                    {result.roots.map((root, idx) => (
-                      <BlockFormula key={idx} formula={`x_${idx + 1} = ${root.toFixed(6)}`} />
-                    ))}
+                    {result.roots.map((root, idx) => {
+                      if (typeof root === 'object' && root.real !== undefined) {
+                        // Complex number
+                        return (
+                          <p key={idx}>
+                            x<sub>{idx + 1}</sub> = {root.real.toFixed(6)} + {root.imag.toFixed(6)}i
+                          </p>
+                        )
+                      } else if (typeof root === 'number') {
+                        // Real number
+                        return (
+                          <BlockFormula key={idx} formula={`x_${idx + 1} = ${root.toFixed(6)}`} />
+                        )
+                      }
+                      return null
+                    })}
                   </>
                 )}
               </div>
 
-              {result.verification_formulas && (
+              {/* Steps */}
+              {result.steps && result.steps.length > 0 && (
                 <div className="result-item">
-                  <p><strong>Verifikasi dengan Rumus Vieta:</strong></p>
-                  <p>{result.verification_formulas.sum}</p>
-                  <p>{result.verification_formulas.product}</p>
+                  <p><strong>Langkah-langkah:</strong></p>
+                  <div className="steps-container">
+                    {result.steps.map((step, idx) => (
+                      <div key={idx} className="step">
+                        <p className="step-number">Langkah {step.step}: {step.description}</p>
+                        <p className="step-expression">{step.expression}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
 
-              {result.multiplicity && (
+              {/* Verification */}
+              {result.verification && Array.isArray(result.verification) && result.verification.length > 0 && (
                 <div className="result-item">
-                  <p><strong>Multiplisitas:</strong> {result.multiplicity}</p>
+                  <p><strong>Verifikasi:</strong></p>
+                  {result.verification.map((verify, idx) => (
+                    <p key={idx}>
+                      x<sub>{idx + 1}</sub>: Sisa = {verify.result?.toFixed(10)} 
+                      {verify.is_correct ? ' ✓' : ' ✗'}
+                    </p>
+                  ))}
                 </div>
               )}
             </>

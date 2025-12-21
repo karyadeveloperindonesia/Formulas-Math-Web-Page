@@ -84,6 +84,37 @@ class DefiniteIntegralRequest(BaseModel):
 class IntegralStepsRequest(BaseModel):
     function: str
 
+# ============ ALGEBRA MODELS ============
+class LinearEquationRequest(BaseModel):
+    a: float
+    b: float
+    
+    @validator('a')
+    def validate_a(cls, v):
+        if v == 0:
+            raise ValueError('Coefficient a cannot be zero')
+        return v
+
+class QuadraticEquationRequest(BaseModel):
+    a: float
+    b: float
+    c: float
+    
+    @validator('a')
+    def validate_a(cls, v):
+        if v == 0:
+            raise ValueError('Coefficient a cannot be zero for quadratic equation')
+        return v
+
+class PolynomialEquationRequest(BaseModel):
+    coefficients: List[float]
+    
+    @validator('coefficients')
+    def validate_coefficients(cls, v):
+        if not v or len(v) == 0:
+            raise ValueError('Coefficients list cannot be empty')
+        return v
+
 # ============ ROOT ENDPOINT ============
 @app.get("/")
 def read_root():
@@ -95,6 +126,15 @@ def read_root():
             "solid_of_revolution": {
                 "endpoint": "/api/volume",
                 "description": "Calculate volume of solids of revolution",
+                "method": "POST"
+            },
+            "algebra": {
+                "endpoints": {
+                    "/api/algebra/solve-linear": "Solve linear equation ax + b = 0",
+                    "/api/algebra/solve-quadratic": "Solve quadratic equation ax² + bx + c = 0",
+                    "/api/algebra/factor-quadratic": "Factor quadratic expression",
+                    "/api/algebra/solve-polynomial": "Solve polynomial equation"
+                },
                 "method": "POST"
             },
             "linear_algebra": {
@@ -129,6 +169,75 @@ def read_root():
         },
         "documentation": "/docs"
     }
+
+# ============ ALGEBRA ROUTES ============
+@app.post("/api/algebra/solve-linear")
+async def solve_linear_equation(request: LinearEquationRequest):
+    """Solve linear equation: ax + b = 0"""
+    try:
+        from services.algebra_service import AlgebraService
+        
+        algebra_service = AlgebraService()
+        result = algebra_service.solve_linear(request.a, request.b)
+        
+        return {
+            "success": True,
+            "module": "algebra",
+            **result
+        }
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+@app.post("/api/algebra/solve-quadratic")
+async def solve_quadratic_equation(request: QuadraticEquationRequest):
+    """Solve quadratic equation: ax² + bx + c = 0"""
+    try:
+        from services.algebra_service import AlgebraService
+        
+        algebra_service = AlgebraService()
+        result = algebra_service.solve_quadratic(request.a, request.b, request.c)
+        
+        return {
+            "success": True,
+            "module": "algebra",
+            **result
+        }
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+@app.post("/api/algebra/factor-quadratic")
+async def factor_quadratic_equation(request: QuadraticEquationRequest):
+    """Factor quadratic expression: ax² + bx + c"""
+    try:
+        from services.algebra_service import AlgebraService
+        
+        algebra_service = AlgebraService()
+        result = algebra_service.factor_quadratic(request.a, request.b, request.c)
+        
+        return {
+            "success": True,
+            "module": "algebra",
+            **result
+        }
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+@app.post("/api/algebra/solve-polynomial")
+async def solve_polynomial_equation(request: PolynomialEquationRequest):
+    """Solve polynomial equation from coefficients"""
+    try:
+        from services.algebra_service import AlgebraService
+        
+        algebra_service = AlgebraService()
+        result = algebra_service.solve_polynomial(request.coefficients)
+        
+        return {
+            "success": True,
+            "module": "algebra",
+            **result
+        }
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 # ============ SOLID OF REVOLUTION ROUTES ============
 @app.post("/api/volume")

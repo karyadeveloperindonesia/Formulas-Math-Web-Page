@@ -968,7 +968,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #1f2937;
+  color: #000000;
 }
 
 .type-selector {
@@ -981,41 +981,41 @@
 .type-btn {
   padding: 14px 18px;
   background: white;
-  border: 2px solid #e5e7eb;
+  border: 2px solid #d0d0d0;
   border-radius: 10px;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: #6b7280;
+  color: #666666;
   text-align: center;
 }
 
 .type-btn:hover {
-  border-color: #667eea;
-  background: #f8f9ff;
+  border-color: #000000;
+  background: #f8f9fa;
   transform: translateY(-2px);
 }
 
 .type-btn.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #000000;
   color: white;
-  border-color: #667eea;
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  border-color: #000000;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .calculator-input-group {
-  background: linear-gradient(135deg, #f8f9fa 0%, #f0f4ff 100%);
+  background: #f8f9fa;
   border-radius: 15px;
   padding: 30px;
   margin-bottom: 30px;
-  border: 2px solid #e5e7eb;
+  border: 1px solid #e0e0e0;
 }
 
 .calculator-input-group h3 {
   margin: 0 0 25px 0;
   font-size: 1.2rem;
-  color: #1f2937;
+  color: #000000;
   font-weight: 700;
 }
 
@@ -1031,24 +1031,25 @@
   flex-direction: column;
   gap: 8px;
   font-weight: 600;
-  color: #374151;
+  color: #000000;
   font-size: 0.95rem;
 }
 
 .input-row .input-field {
   padding: 12px 15px;
-  border: 2px solid #e5e7eb;
+  border: 1px solid #d0d0d0;
   border-radius: 10px;
   font-size: 1rem;
   font-family: 'Courier New', monospace;
   transition: all 0.3s ease;
   background: white;
+  color: #000000;
 }
 
 .input-row .input-field:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  border-color: #000000;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
   background: white;
 }
 
@@ -1060,41 +1061,41 @@
   padding: 20px;
   background: white;
   border-radius: 10px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #000000;
 }
 
 .examples-group p {
   margin: 0 0 10px 0;
   font-weight: 700;
-  color: #1f2937;
+  color: #000000;
   font-size: 0.95rem;
 }
 
 .example-btn {
   padding: 10px 16px;
   background: white;
-  border: 2px solid #d1d5db;
+  border: 2px solid #d0d0d0;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
   font-size: 0.9rem;
-  color: #667eea;
+  color: #000000;
   transition: all 0.3s ease;
   font-family: 'Courier New', monospace;
 }
 
 .example-btn:hover {
-  background: #667eea;
+  background: #000000;
   color: white;
-  border-color: #667eea;
+  border-color: #000000;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .calculate-btn {
   width: 100%;
   padding: 16px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #000000;
   color: white;
   border: none;
   border-radius: 10px;
@@ -1104,12 +1105,12 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .calculate-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .calculate-btn:disabled {
@@ -1119,8 +1120,8 @@
 
 .error-box {
   padding: 18px 22px;
-  background: linear-gradient(135deg, #fef3c7 0%, #fef0f5 100%);
-  border: 2px solid #fcd34d;
+  background: #fff3cd;
+  border: 1px solid #ffc107;
   border-radius: 12px;
   margin: 25px 0;
   display: flex;
@@ -1130,7 +1131,7 @@
 
 .error-box p {
   margin: 0;
-  color: #92400e;
+  color: #333333;
   font-weight: 600;
   font-size: 1rem;
 }
@@ -1138,7 +1139,7 @@
 .result-box {
   padding: 30px;
   background: white;
-  border: 2px solid #e5e7eb;
+  border: 1px solid #e0e0e0;
   border-radius: 15px;
   margin-top: 30px;
   animation: slideInUp 0.5s ease-out;
@@ -1158,7 +1159,7 @@
 .result-box h3 {
   margin: 0 0 20px 0;
   font-size: 1.2rem;
-  color: #1f2937;
+  color: #000000;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -1167,33 +1168,33 @@
 
 .equation-display {
   padding: 15px;
-  background: #f3f4f6;
-  border-left: 4px solid #667eea;
+  background: #f8f9fa;
+  border-left: 4px solid #000000;
   border-radius: 8px;
   font-family: 'Courier New', monospace;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #1f2937;
+  color: #000000;
   margin: 0 0 20px 0;
 }
 
 .result-item {
   margin-bottom: 25px;
   padding: 20px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #f0f4ff 100%);
+  background: #f8f9fa;
   border-radius: 10px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #000000;
 }
 
 .result-item p {
   margin: 8px 0;
-  color: #374151;
+  color: #333333;
   font-size: 0.95rem;
   line-height: 1.6;
 }
 
 .result-item strong {
-  color: #1f2937;
+  color: #000000;
   font-weight: 700;
 }
 
@@ -1203,8 +1204,43 @@
   background: white;
   border-radius: 8px;
   font-weight: 600;
-  color: #667eea;
+  color: #000000;
   margin: 8px 0;
+}
+
+/* ============ STEPS CONTAINER ============ */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.step {
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #000000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.step-number {
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+}
+
+.step-expression {
+  font-family: 'Monaco', 'Courier New', monospace;
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
+  color: #000000;
+  margin: 0;
+  overflow-x: auto;
+  border: 1px solid #e0e0e0;
 }
 
 /* ============ RESPONSIVE ============ */
