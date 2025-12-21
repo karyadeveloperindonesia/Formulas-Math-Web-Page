@@ -1,0 +1,231 @@
+.category-page {
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.category-hero {
+  background: linear-gradient(135deg, #f8f9fa 0%, #f0f1f3 100%);
+  padding: 80px 24px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.category-hero .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-hero-icon {
+  font-size: 80px;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.category-hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+.category-hero p {
+  font-size: 18px;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.category-search {
+  padding: 48px 0;
+  background: white;
+}
+
+.category-search .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.category-formulas {
+  padding: 48px 0;
+}
+
+.category-formulas .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.category-formulas h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 48px;
+  text-align: left;
+}
+
+.formulas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 24px;
+}
+
+.no-results p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Modal styles untuk category page */
+.modal-formula {
+  background: #F8F9FA;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  border-left: 4px solid #2563EB;
+}
+
+.modal-formula h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+.modal-formula .math-formula.block {
+  margin: 0;
+  padding: 12px 0;
+  background: transparent;
+  border: none;
+  font-size: 1.05em;
+}
+
+.formula-modal-content {
+  background: white;
+}
+
+.modal-meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #2563EB;
+  background: rgba(37, 99, 235, 0.1);
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.badge.difficulty {
+  color: white;
+  background: inherit;
+}
+
+.modal-section {
+  margin-bottom: 24px;
+}
+
+.modal-section h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.modal-section p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #E0E0E0;
+}
+
+.btn-modal-primary,
+.btn-modal-secondary {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-modal-primary {
+  background-color: #000;
+  color: white;
+}
+
+.btn-modal-primary:hover {
+  background-color: #333;
+}
+
+.btn-modal-secondary {
+  background-color: #F8F9FA;
+  color: #000;
+  border: 1px solid #E0E0E0;
+}
+
+.btn-modal-secondary:hover {
+  background-color: #E8E9EA;
+}
+
+@media (max-width: 768px) {
+  .category-hero {
+    padding: 48px 24px;
+  }
+
+  .category-hero-icon {
+    font-size: 60px;
+  }
+
+  .category-hero h1 {
+    font-size: 32px;
+  }
+
+  .category-hero p {
+    font-size: 16px;
+  }
+
+  .category-formulas h2 {
+    font-size: 24px;
+  }
+
+  .formulas-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .category-hero {
+    padding: 32px 16px;
+  }
+
+  .category-hero-icon {
+    font-size: 48px;
+  }
+
+  .category-hero h1 {
+    font-size: 24px;
+  }
+
+  .formulas-grid {
+    grid-template-columns: 1fr;
+  }
+}

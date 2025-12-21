@@ -1,0 +1,37 @@
+/* App Styles */
+#root {
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 72px;
+}
+
+@media (max-width: 1024px) {
+  body {
+    padding-top: 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 56px;
+  }
+}

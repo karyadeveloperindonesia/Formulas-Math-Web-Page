@@ -1,0 +1,44 @@
+.math-formula {
+  display: inline;
+}
+
+.math-formula.block {
+  display: block;
+  margin: 16px 0;
+  padding: 16px;
+  background: #F8F9FA;
+  border-radius: 8px;
+  border-left: 4px solid #2563EB;
+  overflow-x: auto;
+}
+
+.math-formula.inline {
+  display: inline;
+  font-size: inherit;
+}
+
+.math-formula .katex {
+  font-size: 1em;
+}
+
+.math-formula.block .katex {
+  font-size: 1.2em;
+}
+
+.math-formula.fallback {
+  font-family: 'JetBrains Mono', monospace;
+  color: #333;
+  word-break: break-word;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .math-formula.block {
+    padding: 12px;
+    margin: 12px 0;
+  }
+
+  .math-formula.block .katex {
+    font-size: 1em;
+  }
+}
