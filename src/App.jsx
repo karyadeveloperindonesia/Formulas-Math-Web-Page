@@ -6,6 +6,8 @@ import { FormulaDetailPageContainer } from './pages/FormulaDetailPageContainer'
 import IntegralDetailPage from './pages/IntegralDetailPage'
 import AlgebraDetailPage from './pages/AlgebraDetailPage'
 import DebugVisualization from './pages/DebugVisualization'
+import NotFoundPage from './pages/NotFoundPage'
+import ServerErrorPage from './pages/ServerErrorPage'
 
 function App() {
   return (
@@ -15,8 +17,12 @@ function App() {
         <Route path="/integral" element={<IntegralDetailPage />} />
         <Route path="/algebra" element={<AlgebraDetailPage />} />
         <Route path="/debug" element={<DebugVisualization />} />
+        <Route path="/error" element={<ServerErrorPage />} />
+        {/* Specific category/formula routes - MUST COME AFTER specific paths */}
         <Route path="/:category" element={<CategoryPageContainer />} />
         <Route path="/:category/:formula" element={<FormulaDetailPageContainer />} />
+        {/* Catch-all route for 404 - MUST BE LAST */}
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   )
